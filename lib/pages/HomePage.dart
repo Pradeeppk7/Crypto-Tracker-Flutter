@@ -64,68 +64,75 @@ class _HomePageState extends State<HomePage> {
                       );
                     } else {
                       if (MarketProvider.markets.length > 0) {
-                        return ListView.builder(
-                          physics: BouncingScrollPhysics(
-                              parent: AlwaysScrollableScrollPhysics()),
-                          itemCount: MarketProvider.markets.length,
-                          itemBuilder: (context, index) {
-                            CryptoCurrency currentCrypto =
-                                MarketProvider.markets[index];
-                            return ListTile(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => DetailsPage(
-                                        id: currentCrypto.id!,
-                                      )),
-                                );
-                              },
-                              contentPadding: EdgeInsets.all(0),
-                              leading: CircleAvatar(
-                                backgroundColor: Colors.white,
-                                backgroundImage:
-                                    NetworkImage(currentCrypto.image!),
-                              ),
-                              title: Text("#${currentCrypto.marketCapRank!} " +
-                                  currentCrypto.name!),
-                              subtitle:
-                                  Text(currentCrypto.symbol!.toUpperCase()),
-                              trailing: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    "₹ " +
-                                        currentCrypto.currentPrice!
-                                            .toStringAsFixed(4),
-                                    style: TextStyle(
-                                      color: Color(0xff0395eb),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                    ),
-                                  ),
-                                  Builder(builder: (context) {
-                                    double pricechange =
-                                        currentCrypto.priceChange24!;
-                                    double pricechangePercentage =
-                                        currentCrypto.priceChangePercentage24!;
-                                    if (pricechange < 0) {
-                                      return Text(
-                                        "${pricechangePercentage.toStringAsFixed(2)}% (${pricechange.toStringAsFixed(4)})",
-                                        style: TextStyle(color: Colors.red),
-                                      );
-                                    } else {
-                                      return Text(
-                                        "+${pricechangePercentage.toStringAsFixed(2)}% (+${pricechange.toStringAsFixed(4)})",
-                                        style: TextStyle(color: Colors.green),
-                                      );
-                                    }
-                                  }),
-                                ],
-                              ),
-                            );
+                        return RefreshIndicator(
+                          onRefresh: () async {
+                            await MarketProvider.fetchData();
                           },
+                          child: ListView.builder(
+                            physics: BouncingScrollPhysics(
+                                parent: AlwaysScrollableScrollPhysics()),
+                            itemCount: MarketProvider.markets.length,
+                            itemBuilder: (context, index) {
+                              CryptoCurrency currentCrypto =
+                                  MarketProvider.markets[index];
+                              return ListTile(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => DetailsPage(
+                                              id: currentCrypto.id!,
+                                            )),
+                                  );
+                                },
+                                contentPadding: EdgeInsets.all(0),
+                                leading: CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  backgroundImage:
+                                      NetworkImage(currentCrypto.image!),
+                                ),
+                                title: Text(
+                                    "#${currentCrypto.marketCapRank!} " +
+                                        currentCrypto.name!),
+                                subtitle:
+                                    Text(currentCrypto.symbol!.toUpperCase()),
+                                trailing: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      "₹ " +
+                                          currentCrypto.currentPrice!
+                                              .toStringAsFixed(4),
+                                      style: TextStyle(
+                                        color: Color(0xff0395eb),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                    Builder(builder: (context) {
+                                      double pricechange =
+                                          currentCrypto.priceChange24!;
+                                      double pricechangePercentage =
+                                          currentCrypto
+                                              .priceChangePercentage24!;
+                                      if (pricechange < 0) {
+                                        return Text(
+                                          "${pricechangePercentage.toStringAsFixed(2)}% (${pricechange.toStringAsFixed(4)})",
+                                          style: TextStyle(color: Colors.red),
+                                        );
+                                      } else {
+                                        return Text(
+                                          "+${pricechangePercentage.toStringAsFixed(2)}% (+${pricechange.toStringAsFixed(4)})",
+                                          style: TextStyle(color: Colors.green),
+                                        );
+                                      }
+                                    }),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
                         );
                       } else {
                         return Text("Data Not Found!");

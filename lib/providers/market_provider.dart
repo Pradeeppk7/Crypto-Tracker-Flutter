@@ -12,7 +12,7 @@ class MarketProvider with ChangeNotifier {
     fetchData();
   }
 
-  void fetchData() async {
+  Future<void> fetchData() async {
     List<dynamic> _markets = await API.getMarkets();
     List<CryptoCurrency> temp = [];
     for (var market in _markets) {
