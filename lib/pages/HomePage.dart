@@ -1,4 +1,5 @@
 import 'package:crytoapp/models/Cryptocurrency.dart';
+import 'package:crytoapp/pages/DetailPage.dart';
 import 'package:crytoapp/providers/market_provider.dart';
 import 'package:crytoapp/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -71,6 +72,15 @@ class _HomePageState extends State<HomePage> {
                             CryptoCurrency currentCrypto =
                                 MarketProvider.markets[index];
                             return ListTile(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => DetailsPage(
+                                        id: currentCrypto.id!,
+                                      )),
+                                );
+                              },
                               contentPadding: EdgeInsets.all(0),
                               leading: CircleAvatar(
                                 backgroundColor: Colors.white,

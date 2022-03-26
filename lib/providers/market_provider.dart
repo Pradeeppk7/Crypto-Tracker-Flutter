@@ -28,4 +28,10 @@ class MarketProvider with ChangeNotifier {
     //   print("Data updated!");
     // });
   }
+
+  CryptoCurrency fetchCryptoById(String id) {
+    CryptoCurrency crypto =
+        markets.where((element) => element.id == id).toList()[0];
+    return crypto;
+  }
 }
