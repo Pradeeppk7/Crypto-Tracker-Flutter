@@ -1,6 +1,6 @@
 # crytoapp
-## In progress
-- A new Flutter project.
+### In progress
+## A new Flutter project.
 
 ## Getting Started
 
