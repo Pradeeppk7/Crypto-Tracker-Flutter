@@ -14,6 +14,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    ThemeProvider themeProvider =
+        Provider.of<ThemeProvider>(context, listen: false);
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -40,10 +42,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                   IconButton(
                     onPressed: () {
-                      Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+                      themeProvider.toggleTheme();
                     },
                     padding: EdgeInsets.all(0),
-                    icon: Icon(Icons.dark_mode),
+                    icon: (themeProvider.themeMode == ThemeMode.light)
+                        ? Icon(Icons.dark_mode_sharp)
+                        : Icon(Icons.light_mode_sharp),
                   ),
                 ],
               ),
