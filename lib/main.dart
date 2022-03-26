@@ -1,9 +1,11 @@
+import 'package:crytoapp/constants/Themes.dart';
 import 'package:crytoapp/pages/HomePage.dart';
 import 'package:crytoapp/providers/market_provider.dart';
+import 'package:crytoapp/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
@@ -17,16 +19,21 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<MarketProvider>(
           create: (context) => MarketProvider(),
         ),
+        ChangeNotifierProvider<ThemeProvider>(
+          create: (context) => ThemeProvider(),
+        ),
       ],
-       child: MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      child: Consumer<ThemeProvider>(
+        builder: (context, ThemeProvider, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            themeMode: ThemeProvider.themeMode,
+            theme: lightTheme,
+            darkTheme: darkTheme,
+            home: HomePage(),
+          );
+        },
       ),
-      home: HomePage(),
-    ),
     );
-
-   
   }
 }

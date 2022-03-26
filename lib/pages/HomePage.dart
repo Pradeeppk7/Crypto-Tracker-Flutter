@@ -1,5 +1,6 @@
 import 'package:crytoapp/models/Cryptocurrency.dart';
 import 'package:crytoapp/providers/market_provider.dart';
+import 'package:crytoapp/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -27,12 +28,24 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              Text(
-                "Crypto Today",
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Crypto Today",
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+                    },
+                    padding: EdgeInsets.all(0),
+                    icon: Icon(Icons.dark_mode),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 20,
@@ -60,7 +73,8 @@ class _HomePageState extends State<HomePage> {
                                 backgroundImage:
                                     NetworkImage(currentCrypto.image!),
                               ),
-                              title: Text("#${currentCrypto.marketCapRank!} "+currentCrypto.name!),
+                              title: Text("#${currentCrypto.marketCapRank!} " +
+                                  currentCrypto.name!),
                               subtitle:
                                   Text(currentCrypto.symbol!.toUpperCase()),
                               trailing: Column(
@@ -84,9 +98,14 @@ class _HomePageState extends State<HomePage> {
                                         currentCrypto.priceChangePercentage24!;
                                     if (pricechange < 0) {
                                       return Text(
-                                          "${pricechangePercentage.toStringAsFixed(2)}% (${pricechange.toStringAsFixed(4)})",style: TextStyle(color: Colors.red),);
+                                        "${pricechangePercentage.toStringAsFixed(2)}% (${pricechange.toStringAsFixed(4)})",
+                                        style: TextStyle(color: Colors.red),
+                                      );
                                     } else {
-                                      return Text( "+${pricechangePercentage.toStringAsFixed(2)}% (+${pricechange.toStringAsFixed(4)})",style: TextStyle(color: Colors.green),);
+                                      return Text(
+                                        "+${pricechangePercentage.toStringAsFixed(2)}% (+${pricechange.toStringAsFixed(4)})",
+                                        style: TextStyle(color: Colors.green),
+                                      );
                                     }
                                   }),
                                 ],
