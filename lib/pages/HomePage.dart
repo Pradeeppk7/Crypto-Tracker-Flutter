@@ -19,8 +19,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    viewController =TabController(length: 2, vsync: this);
+    viewController = TabController(length: 3, vsync: this);
   }
+
   @override
   Widget build(BuildContext context) {
     ThemeProvider themeProvider =
@@ -60,24 +61,44 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               TabBar(
                 controller: viewController,
                 tabs: [
-                Tab(child: Text("Markets",style:Theme.of(context).textTheme.bodyText1,),),
-                
-                Tab(child: Text("Favorites",style:Theme.of(context).textTheme.bodyText1,),),
-              ],
+                  Tab(
+                    child: Text(
+                      "Markets",
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
+                      "Favorites",
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                  ),
+                   Tab(
+                    child: Text(
+                      "Protfolio",
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                  ),
+                ],
               ),
-              Expanded(child:TabBarView(
-                physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                controller: viewController,
-                children: [Markets(),Favorites()],
+              Expanded(
+                child: TabBarView(
+                  physics: BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
+                  controller: viewController,
+                  children: [Markets(), Favorites(),Markets()],
+                ),
               ),
-          ),
             ],
+          ),
         ),
       ),
-    ),);
+    );
   }
 }
