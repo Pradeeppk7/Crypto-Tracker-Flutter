@@ -2,6 +2,7 @@ import 'package:crytoapp/models/Cryptocurrency.dart';
 import 'package:crytoapp/pages/DetailPage.dart';
 import 'package:crytoapp/pages/Favorites.dart';
 import 'package:crytoapp/pages/Market.dart';
+import 'package:crytoapp/pages/news.dart';
 import 'package:crytoapp/providers/market_provider.dart';
 import 'package:crytoapp/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               TabBar(
                 controller: viewController,
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ),
                    Tab(
                     child: Text(
-                      "Protfolio",
+                      "News",
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                   ),
@@ -92,7 +93,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   physics: BouncingScrollPhysics(
                       parent: AlwaysScrollableScrollPhysics()),
                   controller: viewController,
-                  children: [Markets(), Favorites(),Markets()],
+                  children: [Markets(), Favorites(), CryptoNewsList()],
                 ),
               ),
             ],
