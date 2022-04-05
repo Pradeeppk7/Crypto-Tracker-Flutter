@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "946107261110",
+    "project_id": "cryptotrack-bc6be",
+    "storage_bucket": "cryptotrack-bc6be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946107261110:android:6b0190aec6561e07d68617",
+        "android_client_info": {
+          "package_name": "com.example.crytoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946107261110-af04c7rdlje1onv4cpht1n5aenek6dd6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.crytoapp",
+            "certificate_hash": "fbe1f4103d6b0a46e90be17bd9275942584d065f"
+          }
+        },
+        {
+          "client_id": "946107261110-19ulnk4hcvefamd7aismia9586puhi4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH924HYGPaZ3Maruu9-AATPFlGtUePtM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946107261110-19ulnk4hcvefamd7aismia9586puhi4c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,13 +1,16 @@
 import 'package:crytoapp/constants/Themes.dart';
 import 'package:crytoapp/models/LocalStorage.dart';
 import 'package:crytoapp/pages/HomePage.dart';
+import 'package:crytoapp/pages/Login.dart';
 import 'package:crytoapp/providers/market_provider.dart';
 import 'package:crytoapp/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   String currentTheme = await LocalStorage.getTheme() ?? "light";
   runApp(MyApp(
     theme: currentTheme,
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
             themeMode: ThemeProvider.themeMode,
             theme: lightTheme,
             darkTheme: darkTheme,
-            home: HomePage(),
+            home: LoginScreen(),
           );
         },
       ),

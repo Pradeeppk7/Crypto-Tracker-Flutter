@@ -31,26 +31,36 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 0),
+          
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "TrackCrypto",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
+               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                 
+                        SizedBox(
+                        
+                        height: 50,
+                        child: Image.asset(
+                          "assets/images/name.png",
+                          fit: BoxFit.contain,
+                        )),
+                ]),
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                        
                   Text(
-                    "Crypto Today",
+                    "Today",
                     style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                   
+                        
                   IconButton(
                     onPressed: () {
                       themeProvider.toggleTheme();
