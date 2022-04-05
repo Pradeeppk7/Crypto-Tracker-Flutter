@@ -3,12 +3,16 @@ import 'package:crytoapp/pages/register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/theme_provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
+  
 }
 
 class _LoginScreenState extends State<LoginScreen> {
@@ -27,6 +31,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+     ThemeProvider themeProvider =
+        Provider.of<ThemeProvider>(context, listen: false);
     //email field
     final emailField = TextFormField(
         autofocus: false,
@@ -103,9 +109,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       
+      
       body: Center(
         child: SingleChildScrollView(
           child: Container(
+            
             
             child: Padding(
               padding: const EdgeInsets.all(36.0),
@@ -115,6 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+                   
                     SizedBox(
                         height: 180,
                         child: Image.asset(
@@ -146,17 +155,43 @@ class _LoginScreenState extends State<LoginScreen> {
                                       builder: (context) =>
                                           RegistrationScreen()));
                             },
-                            child: Text(
-                              "SignUp",
-                              style: TextStyle(
-                                  color: Colors.redAccent,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "SignUp",
+                                  style: TextStyle(
+                                      color: Colors.redAccent,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                ),
+                                 
+                        
+                              ],
                             ),
                           )
-                        ])
+                        ]),
+                  Row(mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                                  "Theme",
+                                  style: TextStyle(
+                                      fontSize: 15),
+                                ),
+                      IconButton(
+                        onPressed: () {
+                          themeProvider.toggleTheme();
+                        },
+                        
+                        icon: (themeProvider.themeMode == ThemeMode.light)
+                            ? Icon(Icons.dark_mode_sharp)
+                            : Icon(Icons.light_mode_sharp),
+                      ),
+                    ],
+                  ),
                   ],
+                
                 ),
+
               ),
             ),
           ),

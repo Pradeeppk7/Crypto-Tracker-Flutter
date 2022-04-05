@@ -8,6 +8,8 @@ import 'package:crytoapp/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/Navbar.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -28,30 +30,27 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     ThemeProvider themeProvider =
         Provider.of<ThemeProvider>(context, listen: false);
     return Scaffold(
+      drawer: Navbar(),
+      appBar: AppBar(
+        title: SizedBox(
+            height: 60,
+            child: Image.asset(
+              "assets/images/name.png",
+              fit: BoxFit.contain,
+            )),
+      ),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 0),
-          
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                 
-                        SizedBox(
-                        
-                        height: 50,
-                        child: Image.asset(
-                          "assets/images/name.png",
-                          fit: BoxFit.contain,
-                        )),
-                ]),
               
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                        
+                
+              
                   Text(
                     "Today",
                     style: TextStyle(
@@ -59,17 +58,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                   
-                        
-                  IconButton(
-                    onPressed: () {
-                      themeProvider.toggleTheme();
-                    },
-                    padding: EdgeInsets.all(0),
-                    icon: (themeProvider.themeMode == ThemeMode.light)
-                        ? Icon(Icons.dark_mode_sharp)
-                        : Icon(Icons.light_mode_sharp),
-                  ),
+                  
                 ],
               ),
               SizedBox(
@@ -90,7 +79,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                   ),
-                   Tab(
+                  Tab(
                     child: Text(
                       "News",
                       style: Theme.of(context).textTheme.bodyText1,
