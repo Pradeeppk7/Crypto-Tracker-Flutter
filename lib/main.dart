@@ -60,15 +60,15 @@ class SplashScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset("assets/images/logo.png"),
-          
+        
         ],
       ),
-      backgroundColor: Color.fromARGB(255, 246, 241, 95),
+      backgroundColor:Color.fromARGB(255, 119, 99, 0),
       nextScreen:const LoginScreen(),
       splashIconSize: 200,
       duration: 1000,
       splashTransition: SplashTransition.rotationTransition,
-      pageTransitionType: PageTransitionType.leftToRight,
+      pageTransitionType: PageTransitionType.bottomToTop,
       animationDuration: const Duration(seconds: 3),
       );
     

@@ -31,9 +31,11 @@ class _FavoritesState extends State<Favorites> {
         }
         else{
           return Center(child: Text("No Favorites yet",style: TextStyle(color:Colors.grey,fontSize: 25),),);
+          
         }
       },
     );
+    
     // return Container(
     //   child: Text("Favorites HERE"),
     // );

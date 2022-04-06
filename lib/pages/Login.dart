@@ -12,7 +12,6 @@ class LoginScreen extends StatefulWidget {
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
-  
 }
 
 class _LoginScreenState extends State<LoginScreen> {
@@ -31,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-     ThemeProvider themeProvider =
+    ThemeProvider themeProvider =
         Provider.of<ThemeProvider>(context, listen: false);
     //email field
     final emailField = TextFormField(
@@ -108,13 +107,9 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     return Scaffold(
-      
-      
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            
-            
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(
@@ -122,25 +117,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                   
+                  children: [
+                    SizedBox(height: 100),
                     SizedBox(
-                        height: 180,
+                        height: 100,
                         child: Image.asset(
                           "assets/images/logo.png",
                           fit: BoxFit.contain,
                         )),
+                    SizedBox(height: 25),
                     SizedBox(
-                        height: 100,
+                        height: 50,
                         child: Image.asset(
                           "assets/images/name.png",
                           fit: BoxFit.contain,
                         )),
-                    SizedBox(height: 45),
-                    emailField,
                     SizedBox(height: 25),
+                    emailField,
+                    SizedBox(height: 20),
                     passwordField,
-                    SizedBox(height: 35),
+                    SizedBox(height: 25),
                     loginButton,
                     SizedBox(height: 15),
                     Row(
@@ -164,34 +160,30 @@ class _LoginScreenState extends State<LoginScreen> {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15),
                                 ),
-                                 
-                        
                               ],
                             ),
                           )
                         ]),
-                  Row(mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                                  "Theme",
-                                  style: TextStyle(
-                                      fontSize: 15),
-                                ),
-                      IconButton(
-                        onPressed: () {
-                          themeProvider.toggleTheme();
-                        },
-                        
-                        icon: (themeProvider.themeMode == ThemeMode.light)
-                            ? Icon(Icons.dark_mode_sharp)
-                            : Icon(Icons.light_mode_sharp),
-                      ),
-                    ],
-                  ),
+                    SizedBox(height: 100),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Theme",
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            themeProvider.toggleTheme();
+                          },
+                          icon: (themeProvider.themeMode == ThemeMode.light)
+                              ? Icon(Icons.lightbulb_sharp)
+                              : Icon(Icons.lightbulb_sharp),
+                        ),
+                      ],
+                    ),
                   ],
-                
                 ),
-
               ),
             ),
           ),

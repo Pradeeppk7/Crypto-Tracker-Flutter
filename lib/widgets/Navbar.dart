@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:crytoapp/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -40,12 +41,14 @@ class _NavbarState extends State<Navbar> {
         children: [
           
           const SizedBox(
-            height: 50.0,
+            height: 60.0,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               SizedBox(
                         height: 60,
+                       
+                        
                         child: Image.asset(
                           "assets/images/logo.png",
                           fit: BoxFit.contain,
@@ -89,13 +92,28 @@ class _NavbarState extends State<Navbar> {
                   }),
               
             ),
-          ListTile(
+            ListTile(
+  
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: () {
               Navigator.of(context).pop();
             },
           ),
+            SizedBox(height: 400,),
+          ListTile( 
+            title: 
+            
+            Row(
+              children:[
+                SizedBox(width: 40),
+              Text('MADE WITH '),
+               Icon(CupertinoIcons.heart_fill,color:Colors.red ,size: 18,),
+               Row(children:[Text(" BY PRADEEP"),]),],
+            
+            
+          ),),
+     
            
           
         ],

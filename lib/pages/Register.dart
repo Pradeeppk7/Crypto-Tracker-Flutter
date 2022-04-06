@@ -207,20 +207,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                        
-                        height: 180,
+                     SizedBox(height: 10),
+                     SizedBox(
+                        height: 100,
                         child: Image.asset(
                           "assets/images/logo.png",
                           fit: BoxFit.contain,
                         )),
+                        SizedBox(height: 25),
                     SizedBox(
-                        height: 100,
+                        height: 50,
                         child: Image.asset(
                           "assets/images/name.png",
                           fit: BoxFit.contain,
                         )),
-                    SizedBox(height: 45),
+                    SizedBox(height: 25),
                     firstNameField,
                     SizedBox(height: 20),
                     secondNameField,
