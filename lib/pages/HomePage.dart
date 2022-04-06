@@ -30,14 +30,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     ThemeProvider themeProvider =
         Provider.of<ThemeProvider>(context, listen: false);
     return Scaffold(
+      
       drawer: Navbar(),
       appBar: AppBar(
-        title: SizedBox(
-            height: 60,
-            child: Image.asset(
-              "assets/images/name.png",
-              fit: BoxFit.contain,
-            )),
+        title: Padding(
+          padding: const EdgeInsets.all(40),
+          child: SizedBox(
+            
+              height: 45,
+              child: Image.asset(
+                "assets/images/nametrans2.png",
+                fit: BoxFit.contain,
+                 
+              )),
+        ),
       ),
       body: SafeArea(
         child: Container(

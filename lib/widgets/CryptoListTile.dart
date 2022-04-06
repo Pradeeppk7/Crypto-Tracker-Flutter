@@ -49,7 +49,7 @@ class CryptoListTile extends StatelessWidget {
             onTap: () {
               marketProvider.removeFavorite(currentCrypto);
             },
-            child: Icon(CupertinoIcons.heart_fill, size: 18, color: Colors.red,),
+            child: Icon(CupertinoIcons.heart_fill, size: 20, color: Colors.red,),
           ),
         ],
       ),
