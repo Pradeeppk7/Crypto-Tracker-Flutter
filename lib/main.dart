@@ -1,3 +1,4 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:crytoapp/constants/Themes.dart';
 import 'package:crytoapp/models/LocalStorage.dart';
 import 'package:crytoapp/pages/HomePage.dart';
@@ -7,6 +8,8 @@ import 'package:crytoapp/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:page_transition/page_transition.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,10 +42,35 @@ class MyApp extends StatelessWidget {
             themeMode: ThemeProvider.themeMode,
             theme: lightTheme,
             darkTheme: darkTheme,
-            home: LoginScreen(),
+            home: SplashScreen(),
           );
         },
       ),
     );
+  }
+}
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSplashScreen(
+      splash: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.asset("assets/images/logo.png"),
+          
+        ],
+      ),
+      backgroundColor: Color.fromARGB(255, 246, 241, 95),
+      nextScreen:const LoginScreen(),
+      splashIconSize: 200,
+      duration: 1000,
+      splashTransition: SplashTransition.rotationTransition,
+      pageTransitionType: PageTransitionType.leftToRight,
+      animationDuration: const Duration(seconds: 3),
+      );
+    
   }
 }

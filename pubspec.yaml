@@ -31,6 +31,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_auth: ^3.3.12
   firebase_core: ^1.14.0
+  page_transition: "^2.0.5"
   flutter:
     sdk: flutter
   fluttertoast: ^8.0.9
@@ -38,6 +39,7 @@ dependencies:
   provider: ^6.0.2
   readmore: ^2.1.0
   shared_preferences: ^2.0.13
+  animated_splash_screen: ^1.1.0
 
 dev_dependencies:
   flutter_lints: ^1.0.0
