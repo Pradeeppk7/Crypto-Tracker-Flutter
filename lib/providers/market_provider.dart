@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:crytoapp/models/API.dart';
 import 'package:crytoapp/models/Cryptocurrency.dart';
@@ -16,6 +17,7 @@ class MarketProvider with ChangeNotifier {
   Future<void> fetchData() async {
     List<dynamic> _markets = await API.getMarkets();
     List<String> favorites = await LocalStorage.fetchFavorites();
+    
     List<CryptoCurrency> temp = [];
     for (var market in _markets) {
       CryptoCurrency newCrypto = CryptoCurrency.fromJSON(market);

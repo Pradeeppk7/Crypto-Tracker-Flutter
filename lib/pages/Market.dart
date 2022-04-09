@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../models/Cryptocurrency.dart';
 import '../providers/market_provider.dart';
-import 'DetailPage.dart';
+import '../pages/DetailPage.dart';
 
 class Markets extends StatefulWidget {
   const Markets({Key? key}) : super(key: key);
