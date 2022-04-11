@@ -35,6 +35,7 @@ class _MarketsState extends State<Markets> {
                 itemCount: MarketProvider.markets.length,
                 itemBuilder: (context, index) {
                   CryptoCurrency currentCrypto = MarketProvider.markets[index];
+                 
                   return CryptoListTile(currentCrypto: currentCrypto);
                 },
               ),

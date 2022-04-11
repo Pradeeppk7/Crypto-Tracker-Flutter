@@ -96,7 +96,7 @@ class _DetailsPageState extends State<DetailsPage> {
   @override
   void dispose() {
     super.dispose();
-    graphProvider.dispose();
+  
   }
 
   @override
@@ -106,6 +106,7 @@ class _DetailsPageState extends State<DetailsPage> {
         return true;
       },
       child: Scaffold(
+        
         appBar: AppBar(
         
         ),
@@ -116,21 +117,28 @@ class _DetailsPageState extends State<DetailsPage> {
               right: 20,
             ),
             child: ListView(
+              
               children: [
-                ToggleButtons(
-                  onPressed: (index) {
-                    toggleDate(index);
-                  },
-                  children: [
-                    Text("1D"),
-                    Text("7D"),
-                    Text("28D"),
-                    Text("90D"),
-                  ],
-                  isSelected: isSelected,
+                 SizedBox(
+                  height: 20,
+                ),
+                Center(
+                  child: ToggleButtons(
+                    borderRadius: BorderRadius.circular(10),
+                    onPressed: (index) {
+                      toggleDate(index);
+                    },
+                    children: [
+                      Text("1D"),
+                      Text("7D"),
+                      Text("28D"),
+                      Text("90D"),
+                    ],
+                    isSelected: isSelected,
+                  ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
@@ -156,20 +164,29 @@ class _DetailsPageState extends State<DetailsPage> {
                         marketProvider.fetchCryptoById(widget.id);
 
                     return ListView(
+                    
+                                         
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       children: [
                         ListTile(
-                          contentPadding: EdgeInsets.all(0),
-                          leading: CircleAvatar(
-                            backgroundColor: Colors.white,
-                            backgroundImage: NetworkImage(currentCrypto.image!),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                          contentPadding: EdgeInsets.all(10),
+                          tileColor: Color.fromARGB(19, 92, 92, 92),
+                          
+                          
+                          leading: (
+                            ClipOval(
+                              child: Image.network(currentCrypto.image!),
+            
+                         
+                            )
                           ),
                           title: Text(
                             currentCrypto.name! +
                                 " (${currentCrypto.symbol!.toUpperCase()})",
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 30,
                             ),
                           ),
                           subtitle: Text(
@@ -185,12 +202,13 @@ class _DetailsPageState extends State<DetailsPage> {
                           height: 20,
                         ),
                         Column(
+                        
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "Price Change (24h)",
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20),
+                                  fontWeight: FontWeight.bold, fontSize: 20 ,),
                             ),
                             Builder(
                               builder: (context) {

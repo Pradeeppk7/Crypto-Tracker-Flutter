@@ -47,31 +47,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 0),
+          
+          padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                
               
-                  Text(
-                    "Today",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
+              
               TabBar(
                 controller: viewController,
+                
                 tabs: [
                   Tab(
                     child: Text(
@@ -95,6 +81,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
               Expanded(
                 child: TabBarView(
+                  
                   physics: BouncingScrollPhysics(
                       parent: AlwaysScrollableScrollPhysics()),
                   controller: viewController,

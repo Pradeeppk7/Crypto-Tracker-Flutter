@@ -54,8 +54,10 @@ class _CryptoNewsListState extends State<CryptoNewsList> {
       return Container(
         width: screenWidth * 0.9,
         margin: EdgeInsets.all(10),
+        
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10)),
+            borderRadius: BorderRadius.circular(15),
+            color:  Color.fromARGB(19, 92, 92, 92),),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +67,7 @@ class _CryptoNewsListState extends State<CryptoNewsList> {
                 Container(
                   height: 160,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(15),
                     image: DecorationImage(
                         image: NetworkImage(toShow.imageUrl), fit: BoxFit.cover),
                   ),
