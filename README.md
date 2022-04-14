@@ -20,10 +20,10 @@
 ## Application Demo
 
 ### Light Theme
-<img src="https://user-images.githubusercontent.com/88220620/163412955-e9e2b39e-24b5-449f-b3b9-0fa3868a0a9a.gif" width="60">
+<img src="https://user-images.githubusercontent.com/88220620/163412955-e9e2b39e-24b5-449f-b3b9-0fa3868a0a9a.gif" width="120">
 
 ### Dark Theme
-<img src="https://user-images.githubusercontent.com/88220620/163412983-6bcc9978-e2d1-49fd-9b46-a3ce952ad407.gif" width="60">
+<img src="https://user-images.githubusercontent.com/88220620/163412983-6bcc9978-e2d1-49fd-9b46-a3ce952ad407.gif" width="120">
 
 
 ## Video Demo 
