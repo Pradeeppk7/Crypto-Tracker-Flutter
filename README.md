@@ -1,15 +1,32 @@
 # Crypto Currency Tracker 
 - The Cryptocurrency tracker is a cross platform application , which tracks the crypto currency . 
-![image](https://user-images.githubusercontent.com/88220620/163411079-911618dc-e45c-4040-afd9-fe846e2415f8.png)
-- The app is developed using Flutter, Android Studio , Vscode ,Firestore ,Figma , Git ,Coingecko  , Newsdata.dev and Firebase.
-![image](https://user-images.githubusercontent.com/88220620/163411155-f69f4e41-34c4-4df5-bbbc-ebb54464d95c.png)
+- The app is developed using Flutter, Android Studio , Vscode , Firebase , Firestore , Figma , Git , Coingecko ,and  Newsdata.dev .
+- Live tracking for more then 100+ cryptocurrency with graph.
+- Live news update from genuine source. 
+- Favorite section for tracking convenience.
+- The logo was designed using Figma.
+
+### Developer mode:
+- Open the flutter file in terminal.
+- Open the emulator using android studio.
+- Use this code “flutter run” to run the application in emulator.
+
+### Production mode:
+- Open the flutter file in terminal.
+- Use this code “flutter build apk --build-name=1.1.1  --build-number=4” to build the apk. 
+- Now , apk (21mb) can be installed in your mobile or in emulator. 
+
+## Application Demo
 
 
-## A new Flutter project.
+![image](https://user-images.githubusercontent.com/88220620/163412304-62d5b91f-f6e4-4290-91a9-d3d9558130fb.png)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+
+![image](https://user-images.githubusercontent.com/88220620/163412374-49ebf3f6-7e4b-4c0c-a20f-af9c54bf77ad.png)
+
+
+
 
 A few resources to get you started if this is your first Flutter project:
 
