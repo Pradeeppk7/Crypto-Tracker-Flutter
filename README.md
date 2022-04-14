@@ -14,7 +14,7 @@
 
 ### Production mode:
 - Open the flutter file in terminal.
-- Use this code “flutter build apk --build-name=1.1.1  --build-number=4” to build the apk. 
+- Use this code “flutter build apk --build-name=  --build-number=” to build the apk. 
 - Now , apk (21mb) can be installed in your mobile or in emulator. 
 
 ## Application Demo
