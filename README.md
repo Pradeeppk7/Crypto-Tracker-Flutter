@@ -1,5 +1,10 @@
-# crytoapp
-### In progress
+# Crypto Currency Tracker 
+- The Cryptocurrency tracker is a cross platform application , which tracks the crypto currency . 
+![image](https://user-images.githubusercontent.com/88220620/163411079-911618dc-e45c-4040-afd9-fe846e2415f8.png)
+- The app is developed using Flutter, Android Studio , Vscode ,Firestore ,Figma , Git ,Coingecko  , Newsdata.dev and Firebase.
+![image](https://user-images.githubusercontent.com/88220620/163411155-f69f4e41-34c4-4df5-bbbc-ebb54464d95c.png)
+
+
 ## A new Flutter project.
 
 ## Getting Started
