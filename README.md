@@ -20,9 +20,11 @@
 ## Application Demo
 
 ### Light Theme
-![output_rqXmao](https://user-images.githubusercontent.com/88220620/163412955-e9e2b39e-24b5-449f-b3b9-0fa3868a0a9a.gif)
+<img src="https://user-images.githubusercontent.com/88220620/163412955-e9e2b39e-24b5-449f-b3b9-0fa3868a0a9a.gif" width="60">
+
 ### Dark Theme
-![output_krVzwK](https://user-images.githubusercontent.com/88220620/163412983-6bcc9978-e2d1-49fd-9b46-a3ce952ad407.gif)
+<img src="https://user-images.githubusercontent.com/88220620/163412983-6bcc9978-e2d1-49fd-9b46-a3ce952ad407.gif" width="60">
+
 
 ## Video Demo 
 https://user-images.githubusercontent.com/88220620/163415292-241f4638-6dc2-4f00-989c-71b020ed5977.mp4
